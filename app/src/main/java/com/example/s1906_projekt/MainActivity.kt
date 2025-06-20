@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
             val maxIndex = probs.indices.maxByOrNull { probs[it] } ?: -1
             val confidence = probs[maxIndex] * 100
             val confidenceStr = String.format("%.1f", confidence)
-            resultView.text = "To jest: ${classNames[maxIndex]} - pewność: ($confidenceStr%)"
+            resultView.text = "To jest: ${classNames[maxIndex]} - pewność ($confidenceStr%)"
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
