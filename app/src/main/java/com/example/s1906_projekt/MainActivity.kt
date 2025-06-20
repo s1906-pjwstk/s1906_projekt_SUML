@@ -1,7 +1,6 @@
 package com.example.s1906_projekt
 import org.pytorch.IValue
 import org.pytorch.Module
-import org.pytorch.Tensor
 import org.pytorch.torchvision.TensorImageUtils
 import android.content.Context
 import android.content.Intent
@@ -53,7 +52,6 @@ class MainActivity : ComponentActivity() {
             )
 
             val outputTensor = module.forward(IValue.from(inputTensor)).toTensor()
-            //val scores = outputTensor.dataAsFloatArray
             val rawScores = outputTensor.dataAsFloatArray
             val expScores = rawScores.map { Math.exp(it.toDouble()) }
             val sumExp = expScores.sum()
@@ -66,9 +64,6 @@ class MainActivity : ComponentActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 }
-
-
-
 fun assetFilePath(context: Context, assetName: String): String {
     val file = File(context.filesDir, assetName)
     if (!file.exists()) {
