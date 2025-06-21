@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
         imageView = findViewById(R.id.imageView)
         resultView = findViewById(R.id.resultText)
-        module = Module.load(assetFilePath(this, "fish_model.pt"))
+        module = Module.load(assetFilePath(this, "fish_model8.pt"))
 
         val button: Button = findViewById(R.id.captureButton)
         button.setOnClickListener {
